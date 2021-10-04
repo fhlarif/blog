@@ -10,33 +10,16 @@
 </head>
 
 <body>
+    <?php foreach ($posts as $post): ?>
     <article>
-        <h1><a href="/posts/my-first-post">My first post</a></h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor consectetur fuga nam vitae expedita
-            consequatur facere officia id tempora ut dignissimos, natus iure placeat. Officia voluptatem ad in illum
-            nemo.</p>
+        <a href="/posts/<?= $post->slug; ?>">
+            <h1><?= $post->title ?></h1>
+        </a>
+        <div>
+            <?= $post->excerpt ?>
+        </div>
     </article>
-    <article>
-        <h1><a href="/posts/my-second-post">My secone post</a></h1>
-
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor consectetur fuga nam vitae expedita
-            consequatur facere officia id tempora ut dignissimos, natus iure placeat. Officia voluptatem ad in illum
-            nemo.</p>
-    </article>
-    <article>
-        <h1><a href="/posts/my-third-post">My thirs post</a></h1>
-
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor consectetur fuga nam vitae expedita
-            consequatur facere officia id tempora ut dignissimos, natus iure placeat. Officia voluptatem ad in illum
-            nemo.</p>
-    </article>
-    <article>
-        <h1><a href="/posts/my-forth-post">My fort post</a></h1>
-
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor consectetur fuga nam vitae expedita
-            consequatur facere officia id tempora ut dignissimos, natus iure placeat. Officia voluptatem ad in illum
-            nemo.</p>
-    </article>
+    <?php endforeach; ?>
 </body>
 
 </html>
