@@ -12,6 +12,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'excerpt', 'body'];
 
+    /**if dont want to repeat other places. eager load always */
+    // protected $with = ['category','author'];
 
     /** when not use id for route and use (Post $post) */
     // public function getRouteKeyName()
