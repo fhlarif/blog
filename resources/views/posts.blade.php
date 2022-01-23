@@ -1,5 +1,20 @@
 <x-app>
-    @foreach ($posts as $post)
+
+    @include('partials.main-header')
+
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+        @if ($posts->count())
+
+        <x-post-grid :posts="$posts"></x-post-grid>
+
+        @else
+        <p class="text-center">No post yet. Please check back later.</p>
+        @endif
+
+    </main>
+
+
+    {{-- @foreach ($posts as $post)
     <article>
         <a href="/posts/{{ $post->slug}}">
             <h1>{{ $post->title }}</h1>
@@ -12,5 +27,5 @@
             <p>{{ $post->excerpt }}</p>
         </div>
     </article>
-    @endforeach
+    @endforeach --}}
 </x-app>
